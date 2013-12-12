@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SkilapActivity!</string>
+    <string name="app_name">Skilap Cash</string>
+    <string name="defDomain"></string>
+    <string name="defUserName"></string>
+    <string name="defPassword"></string>
+    <string name="Login">Login</string>
+    <string name="Close">Close</string>
+    <string name="Add">Add</string>
+    <string name="Memo">Description</string>
+    <string name="AddSplit">Add split</string>
+    <string name="Save">Save</string>
+    <string-array name="SpentRecive">
+        <item >Spent</item>
+        <item >Recieved</item>
+    </string-array>
+    <string name="defValue">0.00</string>
+    <string name="ClickForChange">Click for select</string>
+    <string name="Logout">Logout</string>
+    <string name="Recent">Recent</string>
+    <string name="All">All</string>
+    <string name="LoadAccounts">Load accounts&#8230;</string>
+    <string name="LoadDetails">Load details&#8230;</string>
+    <string name="Hi">Hi,&#8194;</string>
+    <string name="Assets">Assets</string>
+    <string name="Liabilities">Liabilities</string>
+    <string name="SaveTransaction">Save Transaction&#8230;</string>
+    <string name="DoLogin">Login&#8230;</string>
+    <string name="AccName">Name</string>
+    <string name="ParentAcc">Parent</string>
+    <string name="Currency">Currency</string>
+    <string name="AccType">Type</string>
+    <string name="Hidden">Hidden</string>
+    <string name="Placeholder">Placeholder</string>
+    <string name="New">New</string>
+    <string name="Edit">Edit</string>
+    <string name="SelectCurrency">Select currency</string>
+    <string name="SelectType">Select type</string>
+    <string name="SelectParent">Select parent</string>
+    <string name="ReLogin">Relogin</string>
+    <string name="Url">Url:</string>
+    <string name="Name">Name:</string>
+    <string name="Password">Password:</string>
+</resources>

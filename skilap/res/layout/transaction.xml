@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="right"
+        android:ems="10"
+        android:inputType="date" >
+
+        <requestFocus android:layout_width="wrap_content" />
+    </EditText>
+
+    <EditText
+        android:id="@+id/etMemo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etDate"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="@string/Memo"
+        android:inputType="textMultiLine"
+        android:maxHeight="@dimen/memo_height"
+        android:singleLine="false" />
+
+    <ListView
+        android:id="@+id/lvSplits"
+        android:layout_width="fill_parent"
+        android:layout_height="92dp"
+        android:layout_above="@+id/btAddSplit"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etMemo"
+        android:descendantFocusability="beforeDescendants" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btAddSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_gravity="bottom"
+        android:text="@string/AddSplit" />
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/Save" />
+
+</RelativeLayout>

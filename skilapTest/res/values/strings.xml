@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World!</string>
+    <string name="app_name">TestNoteList</string>
+    <string name="url">192.168.0.133</string>
+	<string name="user_name">andrey</string>
+	<string name="password">andrey</string>
+	<string name="tr1Desc">Test desc1</string>
+	<string name="spl1Price">101.0</string>
+	<string name="spl2Price">102.0</string>
+	<string name="activityTimeout">20000</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SkilapActivity!</string>
+    <string name="app_name">Skilap Cash</string>
+    <!-- string name="defDomain">http://192.168.0.133/jsonrpc</string>
+    <string name="defUserName">andrey</string>
+    <string name="defPassword">andrey</string -->
+    <string name="defDomain"></string>
+    <string name="defUserName"></string>
+    <string name="defPassword"></string>
+    <string name="Login">Вход</string>
+    <string name="Close">Закрыть</string>
+    <string name="Add">Добавить</string>
+    <string name="Memo">Описание</string>
+    <string name="AddSplit">Добавить сплит</string>
+    <string name="Save">Сохранить</string>
+    <string-array name="SpentRecive">
+        <item >Списано</item>
+        <item >Получено</item>
+    </string-array>
+    <string name="defValue">0.00</string>
+    <string name="ClickForChange">Нажмите для выбора</string>
+    <string name="Logout">Отключиться</string>
+    <string name="Recent">Последние</string>
+    <string name="All">Все</string>
+    <string name="LoadAccounts">Загрузка&#8230;</string>
+    <string name="LoadDetails">Загрузка&#8230;</string>
+    <string name="Hi">Здравствуйте, &#8194;</string>
+    <string name="Assets">Активы</string>
+    <string name="Liabilities">Обязательства</string>
+    <string name="SaveTransaction">Сохранение&#8230;</string>
+    <string name="DoLogin">Вход&#8230;</string>
+    <string name="AccName">Название</string>
+    <string name="ParentAcc">Родительский счет</string>
+    <string name="Currency">Валюта</string>
+    <string name="AccType">Тип счета</string>
+    <string name="Hidden">Скрытый</string>
+    <string name="Placeholder">Структурный</string>
+    <string name="New">Новый</string>
+    <string name="Edit">Редактировать</string>
+    <string name="SelectCurrency">Валюта счета</string>
+    <string name="SelectType">Тип счета</string>
+    <string name="SelectParent">Родительский счет</string>
+    <string name="ReLogin">Войти повторно</string>    
+    <string name="Url">Адрес сервера:</string>
+    <string name="Name">Имя пользователя:</string>
+    <string name="Password">Пароль:</string>
+</resources>
