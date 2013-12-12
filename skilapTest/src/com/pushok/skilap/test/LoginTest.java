@@ -60,6 +60,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 	@SmallTest
 	public void testReLogin() throws Exception {
 		testLogin();
+		solo.waitForDialogToClose();
 		solo.sendKey(Solo.MENU);
 		solo.clickOnMenuItem(ctxApp.getString(R.string.Logout));
 		
@@ -80,15 +81,16 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 	@SmallTest
 	public void testAccounts() throws Exception {
 		testLogin();
+		solo.waitForDialogToClose();
 		assertTrue(solo.searchText("QIWI Bank"));
-		assertTrue(solo.searchText("432.18\\s*руб"));
+		assertTrue(solo.searchText("432.18"));
 		assertTrue(solo.searchText("нал расходы"));
-		assertTrue(solo.searchText("6\\s*992.00\\s*руб"));
+		assertTrue(solo.searchText("6.*992.00"));
 		
 		solo.clickOnText("QIWI Bank");;
 		assertTrue(solo.waitForActivity(DetailsActivity.class, activityTimeout));
 		
-		assertTrue(solo.searchText("QIWI Bank\\s*-\\s*432.18\\s*руб"));
+		assertTrue(solo.searchText("QIWI Bank\\s*-.*432.18"));
 		assertNotNull(solo.getEditText("QIWI Bank"));
 	}
 	
@@ -96,16 +98,18 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 	public void testDetails() throws Exception {
 		testLogin();
 		
+		solo.waitForDialogToClose();
 		solo.clickOnText("QIWI Bank");;
 		assertTrue(solo.waitForActivity(DetailsActivity.class, activityTimeout));
 		
-		assertTrue(solo.searchText("QIWI Bank\\s*-\\s*432.18\\s*руб"));
+		assertTrue(solo.searchText("QIWI Bank\\s*-.*432.18"));
 		solo.clickOnText(ctxApp.getText(R.string.Recent).toString());;
 		
+		solo.waitForDialogToClose();
 		assertTrue(solo.searchText("--\\s*Multiple\\s*--"));
 		assertTrue(solo.searchText("14/12/11"));
 		assertTrue(solo.searchText("нал расходы"));
-		assertTrue(solo.searchText("1\\s*520.00\\s*руб"));
+		assertTrue(solo.searchText("1.*520.00"));
 		assertTrue(solo.searchText("квартира2"));
 		
 		solo.clickOnText(ctxApp.getText(R.string.New).toString());
@@ -127,21 +131,23 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error save trn", AccountsActivity.class);
 
+		solo.waitForDialogToClose();
 		assertTrue(solo.searchText("QIWI Bank"));
-		assertTrue(solo.searchText("331.18\\s*руб"));
+		assertTrue(solo.searchText("331.18"));
 		assertTrue(solo.searchText("нал расходы"));
-		assertTrue(solo.searchText("7\\s*093.00\\s*руб"));
+		assertTrue(solo.searchText("7.*093.00"));
 
 		solo.clickOnText("QIWI Bank");;
 		assertTrue(solo.waitForActivity(DetailsActivity.class, activityTimeout));
 		
-		assertTrue(solo.searchText("QIWI Bank\\s*-\\s*331.18\\s*руб"));
+		solo.waitForDialogToClose();
+		assertTrue(solo.searchText("QIWI Bank\\s*-.*331.18"));
 		solo.clickOnText(ctxApp.getText(R.string.Recent).toString());;
 		
 		solo.searchText("нал расходы", 2);
-		assertTrue(solo.searchText("-" + ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0\\s*руб"));
+		assertTrue(solo.searchText(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0"));
 		
-		solo.clickOnText("-" + ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0\\s*руб");
+		solo.clickOnText(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0");
 		
 		assertTrue(solo.searchText("нал расходы"));
 		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.tr1Desc), solo.getEditText(1).getText().toString());
@@ -160,8 +166,8 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		solo.assertCurrentActivity("Error save trn", AccountsActivity.class);
 
 		assertTrue(solo.searchText("QIWI Bank"));
-		assertTrue(solo.searchText("330.18\\s*руб"));
+		assertTrue(solo.searchText("330.18"));
 		assertTrue(solo.searchText("нал расходы"));
-		assertTrue(solo.searchText("7\\s*094.00\\s*руб"));
+		assertTrue(solo.searchText("7.*094.00"));
 	}
 }
