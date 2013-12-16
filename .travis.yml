@@ -1,7 +1,9 @@
-language: java
-jdk: oraclejdk7
+language: node_js
+node_js:
+  - "0.8"
 
 before_install:
+  - jdk_switcher use oraclejdk7
   - chmod +x $PWD/.travis_install_skilap.sh
   - $PWD/.travis_install_skilap.sh
  
