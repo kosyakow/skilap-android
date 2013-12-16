@@ -5,5 +5,5 @@
 git clone https://github.com/kosyakow/skilapSnapshot.git
 cd skilapSnapshot
 npm install
-node ./app.js &
+sudo node ./app.js &
 cd ..
