@@ -21,6 +21,6 @@ before_script:
 script: 
   - cd skilap
   - ant debug install -Dsdk.dir=$ANDROID_HOME
-  - cd ..
+  - ls
   - cd skilapTest-android
   - ant release test -Dsdk.dir=$ANDROID_HOME
