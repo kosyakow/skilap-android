@@ -1,4 +1,4 @@
-package com.pushok.skilap.test;
+package com.pushok.skilapTest;
 
 import android.app.Activity;
 import android.content.Context;
@@ -33,7 +33,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		settings.edit().clear().commit();
 		solo = new Solo(getInstrumentation());
 		getActivity();
-		activityTimeout = Integer.valueOf(ctxTest.getString(com.pushok.skilap.tests.R.string.activityTimeout));
+		activityTimeout = Integer.valueOf(ctxTest.getString(com.pushok.skilapTest.R.string.activityTimeout));
 	}
 
 	@Override
@@ -49,9 +49,9 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		assertEquals("", solo.getEditText(0).getText().toString());
 		assertEquals("", solo.getEditText(1).getText().toString());
 		assertEquals("", solo.getEditText(2).getText().toString());
-		solo.enterText((EditText) loginActivity.findViewById(R.id.etDomain), ctxTest.getString(com.pushok.skilap.tests.R.string.url));
-		solo.enterText((EditText) loginActivity.findViewById(R.id.etUserName), ctxTest.getString(com.pushok.skilap.tests.R.string.user_name));
-		solo.enterText((EditText) loginActivity.findViewById(R.id.etPassword), ctxTest.getString(com.pushok.skilap.tests.R.string.password));
+		solo.enterText((EditText) loginActivity.findViewById(R.id.etDomain), ctxTest.getString(com.pushok.skilapTest.R.string.url));
+		solo.enterText((EditText) loginActivity.findViewById(R.id.etUserName), ctxTest.getString(com.pushok.skilapTest.R.string.user_name));
+		solo.enterText((EditText) loginActivity.findViewById(R.id.etPassword), ctxTest.getString(com.pushok.skilapTest.R.string.password));
 		solo.clickOnButton(ctxApp.getString(R.string.Login));
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error login", AccountsActivity.class);
@@ -68,11 +68,11 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		solo.assertCurrentActivity("Error show relogin activity", LoginActivity.class);
 
 		loginActivity = solo.getCurrentActivity();
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.url), solo.getEditText(0).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.url), solo.getEditText(0).getText().toString());
 		assertEquals("", solo.getEditText(1).getText().toString());
 		assertEquals("", solo.getEditText(2).getText().toString());
-		solo.enterText((EditText) loginActivity.findViewById(R.id.etUserName), ctxTest.getString(com.pushok.skilap.tests.R.string.user_name));
-		solo.enterText((EditText) loginActivity.findViewById(R.id.etPassword), ctxTest.getString(com.pushok.skilap.tests.R.string.password));
+		solo.enterText((EditText) loginActivity.findViewById(R.id.etUserName), ctxTest.getString(com.pushok.skilapTest.R.string.user_name));
+		solo.enterText((EditText) loginActivity.findViewById(R.id.etPassword), ctxTest.getString(com.pushok.skilapTest.R.string.password));
 		solo.clickOnButton(ctxApp.getString(R.string.Login));
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error login", AccountsActivity.class);
@@ -113,9 +113,9 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		assertTrue(solo.searchText("квартира2"));
 		
 		solo.clickOnText(ctxApp.getText(R.string.New).toString());
-		solo.enterText(1, ctxTest.getString(com.pushok.skilap.tests.R.string.tr1Desc));
+		solo.enterText(1, ctxTest.getString(com.pushok.skilapTest.R.string.tr1Desc));
 		solo.clickOnEditText(3);
-		solo.enterText(3, ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price));
+		solo.enterText(3, ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price));
 		solo.clickOnEditText(4);
 		assertTrue(solo.waitForActivity(AccsActivity.class, activityTimeout));
 		
@@ -125,7 +125,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		assertTrue(solo.waitForActivity(DetailsActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error login", DetailsActivity.class);
 		assertTrue(solo.searchText("нал расходы"));
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price), solo.getEditText(5).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price), solo.getEditText(5).getText().toString());
 		assertEquals("нал расходы", solo.getEditText(4).getText().toString());
 		solo.clickOnText(ctxApp.getText(R.string.Save).toString());;
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));
@@ -145,21 +145,21 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		solo.clickOnText(ctxApp.getText(R.string.Recent).toString());;
 		
 		solo.searchText("нал расходы", 2);
-		assertTrue(solo.searchText(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0"));
+		assertTrue(solo.searchText(ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price) + "0"));
 		
-		solo.clickOnText(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price) + "0");
+		solo.clickOnText(ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price) + "0");
 		
 		assertTrue(solo.searchText("нал расходы"));
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.tr1Desc), solo.getEditText(1).getText().toString());
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price), solo.getEditText(3).getText().toString());
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.spl1Price), solo.getEditText(5).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.tr1Desc), solo.getEditText(1).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price), solo.getEditText(3).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.spl1Price), solo.getEditText(5).getText().toString());
 		assertEquals("нал расходы", solo.getEditText(4).getText().toString());
 
 		solo.clickOnEditText(3);
 		solo.clearEditText(3);
-		solo.enterText(3, ctxTest.getString(com.pushok.skilap.tests.R.string.spl2Price));
+		solo.enterText(3, ctxTest.getString(com.pushok.skilapTest.R.string.spl2Price));
 		solo.clickOnEditText(1);
-		assertEquals(ctxTest.getString(com.pushok.skilap.tests.R.string.spl2Price), solo.getEditText(5).getText().toString());
+		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.spl2Price), solo.getEditText(5).getText().toString());
 
 		solo.clickOnText(ctxApp.getText(R.string.Save).toString());
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));

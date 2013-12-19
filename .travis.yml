@@ -31,4 +31,4 @@ script:
   - cd ..
   - ls
   - cd skilapTest
-  - ant release test -Dsdk.dir=$ANDROID_HOME
+  - ant release install test -Dsdk.dir=$ANDROID_HOME
