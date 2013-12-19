@@ -161,6 +161,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 		solo.clickOnEditText(1);
 		assertEquals(ctxTest.getString(com.pushok.skilapTest.R.string.spl2Price), solo.getEditText(5).getText().toString());
 
+		solo.goBack();
 		solo.clickOnText(ctxApp.getText(R.string.Save).toString());
 		assertTrue(solo.waitForActivity(AccountsActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error save trn", AccountsActivity.class);
