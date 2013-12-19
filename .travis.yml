@@ -1,12 +1,26 @@
-language:
-  - node_js
-node_js:
-  - "0.8"
+language: java
+jdk: oraclejdk7
 
 before_install:
   - chmod +x $PWD/.travis_install_skilap.sh
   - $PWD/.travis_install_skilap.sh
- 
+
+  - chmod +x $PWD/.travis_install_android.sh
+  - $PWD/.travis_install_android.sh
+
+  - export ANDROID_HOME=$PWD/android-sdk-linux
+  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+  - chmod +x $PWD/.travis_install_android_dependencies.sh
+  - $PWD/.travis_install_android_dependencies.sh
+
+  - chmod +x $PWD/.travis_start_emulator.sh
+  - $PWD/.travis_start_emulator.sh
+
+before_script:
+  - chmod +x $PWD/.travis_wait_for_emulator.sh
+  - $PWD/.travis_wait_for_emulator.sh
+
 script: 
   - cd skilap
   - ant debug install -Dsdk.dir=$ANDROID_HOME
