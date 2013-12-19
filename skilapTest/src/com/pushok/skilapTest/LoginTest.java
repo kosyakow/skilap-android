@@ -43,7 +43,6 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 
 	@SmallTest
 	public void testLogin() throws Exception {
-		assertTrue(false);
 		assertTrue(solo.waitForActivity(LoginActivity.class, activityTimeout));
 		solo.assertCurrentActivity("Error show login activity", LoginActivity.class);
 		loginActivity = solo.getCurrentActivity();
