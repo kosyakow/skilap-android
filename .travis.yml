@@ -33,4 +33,4 @@ script:
   - cd skilapTest
   - ant release install -Dsdk.dir=$ANDROID_HOME
   - ant test -Dsdk.dir=$ANDROID_HOME | tee test.log
-  - grep '[exec] OK'
+  - grep '[exec] OK' test.log
