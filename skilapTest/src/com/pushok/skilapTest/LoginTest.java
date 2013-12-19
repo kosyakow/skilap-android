@@ -20,7 +20,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<AccountsActivity
 	private Context ctxTest;
 	private Context ctxApp;
 	private Activity loginActivity;
-	private int activityTimeout = 20000;
+	private int activityTimeout = 30000;
 
 	public LoginTest() {
 		super("", AccountsActivity.class);
